@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="doc.txt" />
+    <Content Include="IR_doc.txt" />
+    <Compile Include="Ast\Main.fs" />
+    <Compile Include="Ast\Ast.fs" />
+    <Compile Include="Expr\Expr.fs" />
+    <Compile Include="Expr\TypeResult.fs" />
+    <Compile Include="Expr\Type.fs" />
+    <Compile Include="Translate\AstExpr\AstExpr.fs" />
+    <Compile Include="Translate\ExprIR.fs" />
+    <Compile Include="IR\Data.fs" />
+    <Compile Include="IR\InstructionCode.fs" />
+    <Compile Include="IR\Bytes.fs" />
+    <Compile Include="IR\Instruction.fs" />
+    <Compile Include="IR\Serialize.fs" />
+    <Compile Include="Lex\Main.fs" />
+    <Compile Include="Lex\Token.fs" />
+    <Compile Include="Lex\Lexing.fs" />
+    <Compile Include="Parse\Main.fs" />
+    <Compile Include="Parse\TokenReader.fs" />
+    <Compile Include="Parse\Parsing.fs" />
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ParLi">
+      <HintPath>..\..\ParLi\ParLi\bin\Debug\netstandard2.0\ParLi.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

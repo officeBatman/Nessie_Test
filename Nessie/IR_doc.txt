@@ -1,0 +1,42 @@
+﻿
+BindName name:
+	Takes a sized value at the top of the stack (does NOT pop it)
+	Bind the name to the non-sized value
+	(That means the variable is now a copy of it)
+
+UnbindName name:
+	Deletes the topmost binding of that name and pops a sized value off the stack
+
+	
+LoadName name:
+	Pushes the topmost value bound to that name onto the stack
+
+LoadInt int:
+	Pushes the integer int to the stack
+
+LoadNum num:
+	Pushes the number num to the stack
+	
+Load sized:
+	Pushes the non-sized value to the stack
+
+Add:
+	Pop 2 integers off the stack and Push the result of adding them
+
+Lambda number-of-names name-1 ... name-n function-bytes
+	Pushes to the stack a new function that captures the value of every name
+	For example: 
+		Lambda 3 "x" "y" "z" some-function
+		When x = a, y = b, z = c
+		Will push onto the stack the following instructions
+		
+		Load a 
+		BindName "x"
+		Load b
+		BindName "y"
+		Load c
+		BindName "z"
+		some-function
+		UnbindName "z"
+		UnbindName "y"
+		UnbindName "x"

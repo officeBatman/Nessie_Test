@@ -1,0 +1,39 @@
+﻿Instructions:
+Push - 0
+Pop - 1
+Add - 2
+
+
+Integers are stored with bytes in this order
+
+let byte1: byte = (integer & 0x000000ff)
+let byte2: byte = (integer & 0x0000ff00) >> 8
+let byte3: byte = (integer & 0x00ff0000) >> 16
+let byte4: byte = (integer & 0xff000000) >> 24
+{byte1, byte2, byte3, byte4}
+
+
+Strings are stored with bytes like
+
+let chars: char array = toCharArray string
+let bytes: byte array = map charByte chars
+{intBytes chars.Length} + bytes
+
+
+
+
+let add = x -> y -> x + y
+~~~~~>
+Bind 0
+Lambda 1 1 0
+	Bind 0
+	Load 1
+	Load 0
+	Add
+
+//	Load ????
+//	Bind 1
+//	Bind 0
+//	Load 1
+//	Load 0
+//	Add
